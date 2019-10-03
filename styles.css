@@ -1,0 +1,26 @@
+body {
+  background: black;
+}
+#map {
+  position: absolute;
+  top:200px; bottom:100px; left: 300px; width:60%;
+}
+
+#title {
+  position: absolute;
+  top: 5px; left: 550px;
+  font-size: 4em;
+  font-family: monospace;
+  color: SteelBlue;
+}
+
+#level {
+  position: absolute;
+  top: 90px; left: 620px;
+  color: white;
+  font-family: arial;
+}
+
+#popup {
+  color: red;
+}

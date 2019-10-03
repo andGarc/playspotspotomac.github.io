@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <!-- map-->
+  <script src='https://api.tiles.mapbox.com/mapbox-gl-js/v1.3.0/mapbox-gl.js'></script>
+	<link href='https://api.tiles.mapbox.com/mapbox-gl-js/v1.3.0/mapbox-gl.css' rel='stylesheet' />
+	<link rel = 'stylesheet' href = 'styles.css'>
+
+  <title>Potomac Playspots</title>
+
+<link href="./main.3f6952e4.css" rel="stylesheet"></head>
+
+<body class="minimal">
+<div id="site-border-left"></div>
+<div id="site-border-right"></div>
+<div id="site-border-top"></div>
+<div id="site-border-bottom"></div>
+<!-- Add your content of header -->
+<header>
+  <nav class="navbar  navbar-fixed-top navbar-inverse">
+    <div class="container">
+        <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar-collapse" aria-expanded="false">
+          <span class="sr-only">Toggle navigation</span>
+          <span class="icon-bar"></span>
+          <span class="icon-bar"></span>
+          <span class="icon-bar"></span>
+        </button>
+
+      <div class="collapse navbar-collapse" id="navbar-collapse">
+        <ul class="nav navbar-nav ">
+          <li><a href="./index.html" title="">01 : Home</a></li>
+          <li><a href="./about.html" title="">02 : Playspot Map</a></li>
+          <li><a href="https://water.weather.gov/ahps2/hydrograph.php?gage=brkm2&wfo=lwx" title="">03 : Little Falls Gauge</a></li>
+        </ul>
+      </div>
+    </div>
+  </nav>
+
+</header>
+<!-- Add your site or app content here -->
+  <div class="hero-full-container background-image-container white-text-container" style="background-image: url('./assets/images/lf.JPG')">
+    <div class="container">
+      <div class="row">
+        <div class="col-xs-12">
+          <div class="hero-full-wrapper">
+            <div class="text-content">
+              <h1>Hello,<br>
+                <span id="typed-strings">
+                  <span>Little Falls Water level: <span id="dd">
+                    <script>
+                    var xmlhttp = new XMLHttpRequest();
+                    xmlhttp.open("GET", "https://waterservices.usgs.gov/nwis/iv/?site=01646500&period=PT2H&format=json&variable=00065", false);
+                    xmlhttp.send();
+                    var data = JSON.parse(xmlhttp.responseText);
+                    var len = data.value.timeSeries[0].values[0].value.length - 1; 	//get the length of the structure containing all the levels
+                    var level = data.value.timeSeries[0].values[0].value[len].value;
+                    document.getElementById("dd").innerHTML = level + " ft";
+                    </script>
+                  </span>
+                </span>
+                </span>
+                <span id="typed"></span>
+              </h1>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+  <script>
+    document.addEventListener("DOMContentLoaded", function (event) {
+       type();
+       movingBackgroundImage();
+    });
+  </script>
+
+
+<script type="text/javascript" src="./main.70a66962.js"></script></body>
+
+</html>
