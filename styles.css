@@ -3,15 +3,14 @@ body {
 }
 #map {
   position: absolute;
-  top:200px; bottom:100px; left: 300px; width:60%;
+  bottom:100px; width:100%;
 }
 
-#title {
-  position: absolute;
-  top: 5px; left: 550px;
-  font-size: 4em;
-  font-family: monospace;
-  color: SteelBlue;
+.marker {
+  width: 70px;
+  height: 70px;
+  border-radius: 50%;
+  cursor: pointer;
 }
 
 #level {
