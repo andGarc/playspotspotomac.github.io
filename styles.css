@@ -3,8 +3,8 @@ body {
 }
 #map {
   position: absolute;
-  bottom:100px; width:100%;
-  zoom: 120%;
+  bottom:50px; width:100%;
+  zoom: 140%;
 }
 .marker {
   width: 70px;
