@@ -28,9 +28,7 @@
 
       <div class="collapse navbar-collapse" id="navbar-collapse">
         <ul class="nav navbar-nav ">
-          <li><a href="./index.html" title="">01 : Home</a></li>
-          <li><a href="./about.html" title="">02 : Playspot Map</a></li>
-          <li><a href="https://water.weather.gov/ahps2/hydrograph.php?gage=brkm2&wfo=lwx" title="">03 : Little Falls Gauge</a></li>
+          <li><a href="https://water.weather.gov/ahps2/hydrograph.php?gage=brkm2&wfo=lwx" title="">Little Falls Gauge</a></li>
         </ul>
       </div>
     </div>
@@ -40,7 +38,18 @@
 <div class="section-container">
     <div class="container">
           <div class="section-container-spacer text-center">
-            <h1 class="h2">02 : Playspot Map</h1>
+            <h1 class="h2">Potomac Playspot Map</h1>
+            <h3><span>Little Falls Water level: <span id="dd"></h3>
+            <script>
+              var xmlhttp = new XMLHttpRequest();
+              xmlhttp.open("GET", "https://waterservices.usgs.gov/nwis/iv/?site=01646500&period=PT2H&format=json&variable=00065", false);
+              xmlhttp.send();
+              var data = JSON.parse(xmlhttp.responseText);
+              var len = data.value.timeSeries[0].values[0].value.length - 1; 	//get the length of the structure containing all the levels
+              var level = data.value.timeSeries[0].values[0].value[len].value;
+              document.getElementById("dd").innerHTML = level + " ft";
+            </script>
+
             <h1 class="h3">
               <p1 style="color: green;">Recommended</p1>
               <p1>|</p1>
@@ -53,7 +62,7 @@
 </div>
 <div class="section-container">
   <div data-tap-disabled="true">
-  <div id= "map" style= "top:240px">
+  <div id= "map" style= "top:260px">
     <script>
     mapboxgl.accessToken = 'pk.eyJ1IjoiYW5nYXJjaWEiLCJhIjoiY2pxbXNzYnl1MHlqbjN4cDIwbHpqMndubiJ9.dFlQvBIXByX5MrwdKlLe6g';
 
