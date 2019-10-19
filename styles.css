@@ -4,6 +4,7 @@ body {
 #map {
   position: absolute;
   bottom:100px; width:100%;
+  zoom: 120%;
 }
 .marker {
   width: 700px;
