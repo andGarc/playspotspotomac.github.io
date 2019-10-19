@@ -7,8 +7,8 @@ body {
   zoom: 120%;
 }
 .marker {
-  width: 700px;
-  height: 700px;
+  width: 70px;
+  height: 70px;
   border-radius: 90%;
   cursor: pointer;
 }
