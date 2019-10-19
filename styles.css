@@ -1,10 +1,6 @@
-#hey{
-  zoom: 140%
-}
 #map {
   position: absolute;
-  top: 260px; bottom:30px; width:100%;
-  zoom: 140%;
+  top: 260px; bottom:70px; width:100%;
 }
 .marker {
   width: 70px;
