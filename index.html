@@ -68,10 +68,10 @@
     var map = new mapboxgl.Map({
       container: 'map', // container id
       style: 'mapbox://styles/angarcia/ck18kp1td0iwr1cphsbyh6lvr', // stylesheet location
-      center: [-77.18, 38.98], // starting position [lng, lat]
-      zoom: 11.7,// starting zoom
-      pitch: 60,
-      bearing: -40
+      center: [-77.24, 38.986], // starting position [lng, lat]
+      zoom: 13,// starting zoom
+      pitch: 30,
+      bearing: 0
     });
 
     map.on('click', function(e) {
@@ -113,19 +113,6 @@
           },
           "geometry": {
             "coordinates": [-77.22852, 38.98052],
-            "type": "Point"
-          }
-        },
-        {
-          "type": "Feature",
-          "properties": {
-            "title": "Beaver Drop",
-            "description": "Beaver Drop - 3.1ft to 5ft",
-            "u_level": 5,
-            "l_level": 3.1
-          },
-          "geometry": {
-            "coordinates": [-77.12305, 38.93791],
             "type": "Point"
           }
         },
@@ -416,7 +403,7 @@
         col = "red";
       }
 
-      var jk = new mapboxgl.Marker({color: col, width: "70px", height: "70px"})
+      var jk = new mapboxgl.Marker({color: col})
       .setLngLat(marker.geometry.coordinates)
       .setPopup(new mapboxgl.Popup({ offset: 25 }) // add popups
       .setHTML('<h3>' + marker.properties.title + '</h3><p>' + marker.properties.description + '</p>'))
