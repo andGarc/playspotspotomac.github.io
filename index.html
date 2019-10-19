@@ -60,8 +60,8 @@
           </div>
     </div>
 </div>
-<div class="section-container" id= "map">
-  <div data-tap-disabled="true">
+<div class="section-container">
+  <div id= "map" style= "top:280px">
     <script>
     mapboxgl.accessToken = 'pk.eyJ1IjoiYW5nYXJjaWEiLCJhIjoiY2pxbXNzYnl1MHlqbjN4cDIwbHpqMndubiJ9.dFlQvBIXByX5MrwdKlLe6g';
 
@@ -416,7 +416,7 @@
         col = "red";
       }
 
-      var jk = new mapboxgl.Marker({color: col, width: "700px", height: "700px"})
+      var jk = new mapboxgl.Marker({color: col, width: "70px", height: "70px"})
       .setLngLat(marker.geometry.coordinates)
       .setPopup(new mapboxgl.Popup({ offset: 25 }) // add popups
       .setHTML('<h3>' + marker.properties.title + '</h3><p>' + marker.properties.description + '</p>'))
@@ -424,7 +424,7 @@
     });
 
     </script>
-</div>
+  </div>
 </div>
 
 
