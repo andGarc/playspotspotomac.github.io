@@ -3,19 +3,9 @@
   top: 260px; bottom:70px; width:100%;
 }
 .marker {
+  background-size: cover;
   width: 70px;
   height: 70px;
   border-radius: 90%;
   cursor: pointer;
-}
-
-#level {
-  position: absolute;
-  top: 90px; left: 620px;
-  color: white;
-  font-family: arial;
-}
-
-#popup {
-  color: red;
 }
