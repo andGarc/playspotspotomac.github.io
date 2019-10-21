@@ -2,9 +2,7 @@
   position: absolute;
   top: 260px; bottom:70px; width:100%;
 }
-.market {
-  background-image: url('https://docs.mapbox.com/mapbox-gl-js/assets/washington-monument.jpg');
-  background-size: cover;
+.marker {
   width: 70px;
   height: 70px;
   border-radius: 90%;
