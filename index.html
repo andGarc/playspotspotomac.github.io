@@ -72,24 +72,6 @@ var map = new mapboxgl.Map({
   bearing: 0
 });
 
-map.on('click', function(e) {
-  var features = map.queryRenderedFeatures(e.point, {
-    layers: ['potomac-playspots'] //name of the layer
-  });
-
-  if (!features.length) {
-    return;
-  }
-
-  var feature = features[0];
-
-  var popup = new mapboxgl.Popup({ offset: [0, -15] })
-  .setLngLat(feature.geometry.coordinates)
-  .setHTML('<h3>' + feature.properties.title + '</h3><p>' + feature.properties.description + '</p>')
-  .addTo(map);
-
-});
-
 xmlhttp = new XMLHttpRequest();
 xmlhttp.open("GET", "https://waterservices.usgs.gov/nwis/iv/?site=01646500&period=PT2H&format=json&variable=00065", false);
 xmlhttp.send();
@@ -111,17 +93,6 @@ var spots = {
       },
       "geometry": {
         "coordinates": [-77.22852, 38.98052],
-        "type": "Point"
-      }
-    },
-    {
-      "type": "Feature",
-      "properties": {
-        "title": "Bitch Monkey",
-        "description": "Bitch Monkey"
-      },
-      "geometry": {
-        "coordinates": [-77.24923, 38.99629],
         "type": "Point"
       }
     },
@@ -385,7 +356,7 @@ var spots = {
 };
 
 spots.features.forEach(function(marker) {
-  
+
   // create a HTML element for each feature
   var el = document.createElement('div');
   el.className = 'marker';
@@ -401,7 +372,7 @@ spots.features.forEach(function(marker) {
     col = "red";
   }
 
-  var jk = new mapboxgl.Marker({color: col})
+  new mapboxgl.Marker({color: col})
   .setLngLat(marker.geometry.coordinates)
   .setPopup(new mapboxgl.Popup({ offset: 25 }) // add popups
   .setHTML('<h3>' + marker.properties.title + '</h3><p>' + marker.properties.description + '</p>'))
