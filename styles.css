@@ -2,9 +2,3 @@
   position: absolute;
   top: 260px; bottom:70px; width:100%;
 }
-.marker {
-  width: 70px;
-  height: 70px;
-  border-radius: 90%;
-  cursor: pointer;
-}

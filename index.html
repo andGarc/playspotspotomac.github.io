@@ -360,6 +360,8 @@ spots.features.forEach(function(marker) {
   // create a HTML element for each feature
   var el = document.createElement('div');
   el.className = 'marker';
+  el.style.width = '500px';
+  el.style.height = '500px';
 
   // make a marker for each feature and add to the map
   var col;
@@ -378,8 +380,6 @@ spots.features.forEach(function(marker) {
   .setHTML('<h3>' + marker.properties.title + '</h3><p>' + marker.properties.description + '</p>'))
   .addTo(map);
 });
-
-map.resize();
 
 </script>
 
